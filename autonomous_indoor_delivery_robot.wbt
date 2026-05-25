@@ -1,0 +1,78 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/GlossyPaint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/BrushedAluminium.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.5307507938227671 -0.4168508681060586 -0.7379288235431165 4.215061874299472
+  position 0.09366948836972042 -2.3928859305247734 7.81437788195891
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  name "hospital_floor"
+  floorSize 1 4
+  floorAppearance GlossyPaint {
+    baseColor 0.0235294 0.156863 0.407843
+  }
+  wallHeight 0.6
+  wallAppearance GlossyPaint {
+    IBLStrength 1.4
+  }
+}
+Solid {
+  translation 0 1.9 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+        IBLStrength 4
+      }
+      geometry Cylinder {
+        height 0.2
+        radius 0.09
+      }
+    }
+  ]
+  name "medical_waste_bin"
+}
+SolidBox {
+  translation 0.42 1 0.076
+  name "laundry_cart"
+  size 0.15 0.15 0.15
+  appearance BrushedAluminium {
+  }
+}
+SolidBox {
+  translation -0.42 0 0.076
+  name "equipment_cart"
+  size 0.15 0.15 0.15
+  appearance BrushedAluminium {
+  }
+}
+SolidBox {
+  translation 0.42 -1 0.076
+  name "supply_trolley"
+  size 0.15 0.15 0.15
+  appearance BrushedAluminium {
+  }
+}
+E-puck {
+  hidden position_0_0 15049.97986345807
+  hidden position_0_1 12683.28835829719
+  hidden rotation_1 0 -0.9999999999999999 0 6.179033971239891
+  hidden rotation_2 0 0.9999999999999999 0 2.567031971605595
+  translation 0.00125788 -1.83587 -6.3962e-05
+  rotation 1.25106e-08 -3.47008e-09 -1 0.0145999
+  controller "robot_controller"
+}
